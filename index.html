@@ -58,10 +58,11 @@
       .input-group {
         display: flex;
         align-items: center;
+        gap: 10px;
       }
 
       .input-group select {
-        width: calc(100% - 50px);
+        flex-grow: 1;
       }
 
       .add-btn {
@@ -69,7 +70,8 @@
         color: white;
         border: none;
         border-radius: 50%;
-        width: 30px;
+        min-width: 30px; /* 使用 min-width 代替 width */
+        width: auto; /* 允許按鈕根據內容調整寬度 */
         height: 30px;
         margin-left: 10px;
         cursor: pointer;
@@ -77,6 +79,7 @@
         align-items: center;
         justify-content: center;
         font-size: 20px;
+        padding: 0 5px; /* 添加一些輕微的水平內邊距 */
       }
 
       .submit-btn {
@@ -146,6 +149,25 @@
       .dialog-buttons .cancel {
         background-color: #6c757d;
         color: white;
+      }
+
+      @media screen and (max-width: 480px) {
+        .container {
+          padding: 15px; /* 減少容器內邊距 */
+        }
+
+        .input-group {
+          flex-direction: column; /* 在小螢幕上垂直排列 */
+          align-items: stretch; /* 使元素填滿寬度 */
+          gap: 10px;
+        }
+
+        .add-btn {
+          align-self: flex-start; /* 左對齊 */
+          width: auto;
+          border-radius: 4px; /* 改為方形按鈕 */
+          margin-left: 0; /* 移除左側邊距 */
+        }
       }
     </style>
   </head>
