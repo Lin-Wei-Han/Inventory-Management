@@ -404,12 +404,13 @@
         liff
           .getProfile()
           .then((profile) => {
-            liff.sendMessages([
+            message.textContent = `${profile}`;
+            /* liff.sendMessages([
               {
                 type: 'text',
                 text: `${profile.displayName} - ${profile.userId}`,
               },
-            ]);
+            ]); */
           })
           .catch((err) => {
             console.error('Failed to get user profile', err);
