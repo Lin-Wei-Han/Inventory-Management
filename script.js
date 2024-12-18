@@ -62,30 +62,10 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // 初始化 LIFF
-    liff.init({ liffId: "YOUR_LIFF_ID" })
-        .then(() => {
-            console.log("LIFF initialized");
-            // 檢查用戶是否已登入
-            if (!liff.isLoggedIn()) {
-                liff.login(); // 導向 LINE 登錄
-            } else {
-                getUserProfile();
-            }
-        })
-        .catch(err => {
-            console.error("LIFF Initialization failed", err);
-        });
-});
-
 // 獲取用戶資料
 function getUserProfile() {
     liff.getProfile()
         .then(profile => {
-            document.getElementById("userId").textContent = profile.userId;
-            document.getElementById("displayName").textContent = profile.displayName;
-
             liff.sendMessages([{
                 type: 'text',
                 text: `${profile.displayName} - ${profile.userId}`

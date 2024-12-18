@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>新增庫存</title>
-    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
       body {
@@ -374,6 +375,28 @@
           message.textContent = '庫存新增成功！';
           setTimeout(() => (message.textContent = ''), 3000);
         }); */
+    </script>
+    <script>
+      const message = document.getElementById('message');
+
+      $(document).ready(function () {
+        liff
+          .init({
+            liffId: '2006689406-z9kX7DDm',
+          })
+          .then(() => {
+            // 初始化成功後的處理
+            getUserProfile();
+            console.log('LIFF initialized successfully');
+            message.textContent = 'LIFF initialized successfully';
+          })
+          .catch((err) => {
+            // 初始化失敗的處理
+            console.error('LIFF initialization failed', err);
+
+            message.textContent = `LIFF initialization failed, ${err}`;
+          });
+      });
     </script>
   </body>
 </html>
