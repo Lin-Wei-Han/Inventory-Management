@@ -59,6 +59,7 @@ form.addEventListener('submit', async (e) => {
 
     // 手動收集表單資料
     const jsonData = {
+        mode: 'plus',
         user_id: user_id,
         品牌: document.getElementById('brandSelect').value,
         胎面寬: document.getElementById('widthSelect').value,
@@ -85,10 +86,27 @@ form.addEventListener('submit', async (e) => {
 
         const result = await response.json();
         if (result.status === 'success') {
-            form.reset();
+            try {
+                const response_stock = await fetch(
+                    'https://script.google.com/macros/s/AKfycbxCG8IWdEuEPNT0I-g1AMAil1Vh9vXl9rvgjPevCU2KQbZZInylkVRNK7VhcLBIOQt7/exec',
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(jsonData)
+                    }
+                )
+                const result_stock = await response_stock.json();
 
-            message.textContent = '庫存新增成功！';
-            setTimeout(() => (message.textContent = ''), 3000);
+                if (result_stock.status === 'success') {
+                    form.reset();
+
+                    message.textContent = '庫存新增成功！';
+                    setTimeout(() => (message.textContent = ''), 3000);
+                }
+            } catch (error) {
+                message.style.color = '#ba5757';
+                message.textContent = `總庫存更新發生錯誤：${error}`;
+                setTimeout(() => (message.textContent = '', message.style.color = ''), 3000);
+            }
         } else {
             message.style.color = '#ba5757';
             message.textContent = `錯誤：${result.message}`;
@@ -99,7 +117,6 @@ form.addEventListener('submit', async (e) => {
     } catch (error) {
         message.style.color = '#ba5757';
         message.textContent = `發送資料時發生錯誤：${error}`;
-        console.error('發送資料時發生錯誤:', error);
         setTimeout(() => (message.textContent = '', message.style.color = ''), 3000);
 
         //alert('無法送出資料，請稍後再試！');
