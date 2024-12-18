@@ -24,7 +24,7 @@ function getUserProfile() {
         .getProfile()
         .then((profile) => {
             message.textContent = `Failed to get user profile: ${err.message}`;
-            user_id = 'profile.userId';
+            user_id = profile.userId;
             liff.sendMessages([
                 {
                     type: 'text',
