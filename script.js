@@ -35,7 +35,7 @@ function getUserProfile() {
         })
         .catch((err) => {
             message.textContent = `Failed to get user profile: ${err.message}`;
-            setTimeout(() => liff.closeWindow(), 3000);
+            //setTimeout(() => liff.closeWindow(), 3000);
         });
 }
 
