@@ -330,9 +330,6 @@
         });
       }
 
-      // 呼叫 API 獲取選項
-      fetchOptions();
-
       // Add Option Button Click Handler
       document.querySelectorAll('.addOption').forEach((button) => {
         button.addEventListener('click', () => {
@@ -364,55 +361,6 @@
           dialog.close();
         }
       });
-
-      // Form Submission Handler
-      /* document
-        .getElementById('inventoryForm')
-        .addEventListener('submit', (e) => {
-          e.preventDefault();
-          const message = document.getElementById('message');
-          message.textContent = '庫存新增成功！';
-          setTimeout(() => (message.textContent = ''), 3000);
-        }); */
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const message = document.getElementById('message');
-
-        // 使用 LIFF 初始化
-        liff
-          .init({
-            liffId: '2006689406-z9kX7DDm', // 請確認此 LIFF ID 是否正確
-          })
-          .then(() => {
-            // 獲取用戶資料
-            getUserProfile();
-          })
-          .catch((err) => {
-            // 初始化失敗的處理
-            message.textContent = `LIFF initialization failed: ${err.message}`;
-            setTimeout(() => liff.closeWindow(), 3000);
-          });
-      });
-
-      // 獲取用戶資料
-      function getUserProfile() {
-        liff
-          .getProfile()
-          .then((profile) => {
-            message.textContent = `Failed to get user profile: ${err.message}`;
-            liff.sendMessages([
-              {
-                type: 'text',
-                text: `${profile.displayName} - ${profile.userId}`,
-              },
-            ]);
-          })
-          .catch((err) => {
-            message.textContent = `Failed to get user profile: ${err.message}`;
-            setTimeout(() => liff.closeWindow(), 3000);
-          });
-      }
     </script>
   </body>
 </html>

@@ -1,8 +1,56 @@
+// 使用 LIFF 初始化
+let user_id;
+
+document.addEventListener('DOMContentLoaded', function () {
+    const message = document.getElementById('message');
+    liff
+        .init({
+            liffId: '2006689406-z9kX7DDm', // 請確認此 LIFF ID 是否正確
+        })
+        .then(() => {
+            // 獲取用戶資料
+            getUserProfile();
+        })
+        .catch((err) => {
+            // 初始化失敗的處理
+            message.textContent = `LIFF initialization failed: ${err.message}`;
+            setTimeout(() => liff.closeWindow(), 3000);
+        });
+});
+
+// 獲取用戶資料
+function getUserProfile() {
+    liff
+        .getProfile()
+        .then((profile) => {
+            message.textContent = `Failed to get user profile: ${err.message}`;
+            user_id = 'profile.userId';
+            liff.sendMessages([
+                {
+                    type: 'text',
+                    text: `${profile.displayName} - ${user_id}`,
+                },
+            ]);
+            fetchOptions();
+        })
+        .catch((err) => {
+            message.textContent = `Failed to get user profile: ${err.message}`;
+            setTimeout(() => liff.closeWindow(), 3000);
+        });
+}
+
+// 新增庫存
+
 const form = document.getElementById('inventoryForm');
 const submitBtn = document.querySelector('.submit-btn');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!user_id) {
+        alert('User ID 尚未載入，請稍後再試！');
+        return;
+    }
 
     const originalText = submitBtn.textContent;
     submitBtn.textContent = '儲存中...';
@@ -11,6 +59,7 @@ form.addEventListener('submit', async (e) => {
 
     // 手動收集表單資料
     const jsonData = {
+        user_id: user_id,
         品牌: document.getElementById('brandSelect').value,
         胎面寬: document.getElementById('widthSelect').value,
         扁平比: document.getElementById('ratioSelect').value,
