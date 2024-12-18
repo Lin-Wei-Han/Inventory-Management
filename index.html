@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>新增庫存</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
@@ -377,26 +376,47 @@
         }); */
     </script>
     <script>
-      const message = document.getElementById('message');
+      document.addEventListener('DOMContentLoaded', function () {
+        const message = document.getElementById('message');
 
-      $(document).ready(function () {
+        // 使用 LIFF 初始化
         liff
           .init({
-            liffId: '2006689406-z9kX7DDm',
+            liffId: '2006689406-z9kX7DDm', // 請確認此 LIFF ID 是否正確
           })
           .then(() => {
-            // 初始化成功後的處理
-            getUserProfile();
+            // 初始化成功後處理
             console.log('LIFF initialized successfully');
             message.textContent = 'LIFF initialized successfully';
+
+            // 獲取用戶資料
+            getUserProfile();
           })
           .catch((err) => {
             // 初始化失敗的處理
             console.error('LIFF initialization failed', err);
-
-            message.textContent = `LIFF initialization failed, ${err}`;
+            message.textContent = `LIFF initialization failed: ${err.message}`;
           });
       });
+
+      // 獲取用戶資料
+      function getUserProfile() {
+        liff
+          .getProfile()
+          .then((profile) => {
+            console.log('User profile:', profile);
+            document.getElementById(
+              'userId'
+            ).textContent = `User ID: ${profile.userId}`;
+            document.getElementById(
+              'displayName'
+            ).textContent = `Display Name: ${profile.displayName}`;
+          })
+          .catch((err) => {
+            console.error('Failed to get user profile', err);
+            message.textContent = `Failed to get user profile: ${err.message}`;
+          });
+      }
     </script>
   </body>
 </html>

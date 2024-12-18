@@ -61,17 +61,3 @@ form.addEventListener('submit', async (e) => {
         submitBtn.style.backgroundColor = '';
     }
 });
-
-// 獲取用戶資料
-function getUserProfile() {
-    liff.getProfile()
-        .then(profile => {
-            liff.sendMessages([{
-                type: 'text',
-                text: `${profile.displayName} - ${profile.userId}`
-            }])
-        })
-        .catch(err => {
-            console.error("Failed to get profile", err);
-        });
-}
