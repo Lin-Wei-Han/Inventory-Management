@@ -405,12 +405,12 @@
           .getProfile()
           .then((profile) => {
             console.log('User profile:', profile);
-            document.getElementById(
-              'userId'
-            ).textContent = `User ID: ${profile.userId}`;
-            document.getElementById(
-              'displayName'
-            ).textContent = `Display Name: ${profile.displayName}`;
+            liff.sendMessages([
+              {
+                type: 'text',
+                text: `${profile.displayName} - ${profile.userId}`,
+              },
+            ]);
           })
           .catch((err) => {
             console.error('Failed to get user profile', err);
