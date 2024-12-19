@@ -109,7 +109,7 @@ form.addEventListener('submit', async (e) => {
                     setTimeout(() => (message.textContent = ''), 3000);
                 } else {
                     message.style.color = '#ba5757';
-                    message.textContent = `錯誤：${result.message}`;
+                    message.textContent = `錯誤：${response_stock.message}`;
                     setTimeout(() => (message.textContent = '', message.style.color = ''), 3000);
                 }
             } catch (error) {
