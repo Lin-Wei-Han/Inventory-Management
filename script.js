@@ -107,6 +107,10 @@ form.addEventListener('submit', async (e) => {
 
                     message.textContent = '庫存新增成功！';
                     setTimeout(() => (message.textContent = ''), 3000);
+                } else {
+                    message.style.color = '#ba5757';
+                    message.textContent = `錯誤：${result.message}`;
+                    setTimeout(() => (message.textContent = '', message.style.color = ''), 3000);
                 }
             } catch (error) {
                 message.style.color = '#ba5757';
