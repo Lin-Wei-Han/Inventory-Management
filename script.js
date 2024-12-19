@@ -57,15 +57,21 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
     submitBtn.style.backgroundColor = '#6c757d';
 
+    const width = document.getElementById('widthSelect').value;
+    const ratio = document.getElementById('ratioSelect').value;
+    const size = document.getElementById('sizeSelect').value;
+    const pattern = document.getElementById('patternSelect').value;
+
     // 手動收集表單資料
     const jsonData = {
         mode: 'plus',
         user_id: user_id,
         品牌: document.getElementById('brandSelect').value,
-        胎面寬: document.getElementById('widthSelect').value,
-        扁平比: document.getElementById('ratioSelect').value,
-        吋別: document.getElementById('sizeSelect').value,
-        花紋: document.getElementById('patternInput').value.trim(),
+        型號: `${width}/${ratio} ${size} ${pattern}`, //胎面寬/扁平比 吋別 花紋
+        胎面寬: width,
+        扁平比: ratio,
+        吋別: size,
+        花紋: pattern,
         數量: document.getElementById('quantityInput').value.trim(),
         產地: document.getElementById('originSelect').value,
         備註: document.getElementById('descriptionInput').value.trim(),

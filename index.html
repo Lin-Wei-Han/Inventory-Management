@@ -245,12 +245,25 @@
 
         <div class="form-group">
           <label>花紋</label>
-          <input
+          <div class="input-group">
+            <select id="patternSelect" required>
+              <option value="">請選擇花紋</option>
+            </select>
+            <button
+              type="button"
+              class="add-btn addOption"
+              data-target="patternSelect"
+              data-label="產地"
+            >
+              +
+            </button>
+          </div>
+          <!-- <input
             type="text"
             id="patternInput"
             placeholder="輸入花紋"
             required
-          />
+          /> -->
         </div>
 
         <div class="form-group">
@@ -283,12 +296,7 @@
 
         <div class="form-group">
           <label>備註</label>
-          <input
-            type="text"
-            id="descriptionInput"
-            placeholder="輸入備註"
-            required
-          />
+          <input type="text" id="descriptionInput" placeholder="輸入備註" />
         </div>
 
         <button type="submit" class="submit-btn">送出</button>
@@ -335,6 +343,7 @@
             populateSelectOptions('ratioSelect', data.data.ratios);
             populateSelectOptions('sizeSelect', data.data.sizes); // 新增
             populateSelectOptions('originSelect', data.data.origins);
+            populateSelectOptions('patternSelect', data.data.patterns);
           }
         } catch (error) {
           console.error('Error fetching options:', error);
