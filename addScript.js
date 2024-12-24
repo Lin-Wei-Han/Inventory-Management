@@ -66,6 +66,7 @@ form.addEventListener('submit', async (e) => {
     const jsonData = {
         mode: 'plus',
         user_id: user_id,
+        action: '進貨',
         品牌: document.getElementById('brandSelect').value,
         型號: `${width}/${ratio} ${size} ${pattern}`, //胎面寬/扁平比 吋別 花紋
         胎面寬: width,
