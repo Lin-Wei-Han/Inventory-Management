@@ -68,7 +68,7 @@ form.addEventListener('submit', async (e) => {
         user_id: user_id,
         action: '進貨',
         品牌: document.getElementById('brandSelect').value,
-        型號: `${width}/${ratio} ${size} ${pattern}`, //胎面寬/扁平比 吋別 花紋
+        規格: `${width}/${ratio} ${size}`, //胎面寬/扁平比 吋別
         胎面寬: width,
         扁平比: ratio,
         吋別: size,
