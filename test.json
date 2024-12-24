@@ -1,0 +1,329 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "普利司通",
+            "weight": "bold",
+            "size": "xl",
+            "margin": "md"
+          },
+          {
+            "type": "separator",
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "品牌：普利司通",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "規格：275/40R19",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "花紋：F1A6",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "產地：CHA",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "數量：105",
+                    "size": "sm",
+                    "color": "#1DB446",
+                    "weight": "bold"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "md",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                          {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#1DB446",
+                            "height": "sm",
+                            "action": {
+                              "type": "message",
+                              "label": "出貨",
+                              "text": "出貨：275/40R19 - F1A6"
+                            }
+                          },
+                          {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#FF9500",
+                            "height": "sm",
+                            "action": {
+                              "type": "message",
+                              "label": "借出",
+                              "text": "借出：275/40R19 - F1A6"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "button",
+                        "style": "secondary",
+                        "height": "sm",
+                        "margin": "sm",
+                        "action": {
+                          "type": "message",
+                          "label": "校正數量",
+                          "text": "校正數量：275/40R19 - F1A6"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "margin": "md",
+                "spacing": "sm",
+                "borderColor": "#dddddd",
+                "borderWidth": "1px",
+                "paddingAll": "10px",
+                "cornerRadius": "5px"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "品牌：普利司通",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "規格：275/40R19",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "花紋：F1A6",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "產地：CHA",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "數量：105",
+                    "size": "sm",
+                    "color": "#1DB446",
+                    "weight": "bold"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "margin": "md",
+                    "contents": [
+                      {
+                        "type": "box",
+                        "layout": "horizontal",
+                        "spacing": "sm",
+                        "contents": [
+                          {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#1DB446",
+                            "height": "sm",
+                            "action": {
+                              "type": "message",
+                              "label": "出貨",
+                              "text": "出貨：275/40R19 - F1A6"
+                            }
+                          },
+                          {
+                            "type": "button",
+                            "style": "primary",
+                            "color": "#FF9500",
+                            "height": "sm",
+                            "action": {
+                              "type": "message",
+                              "label": "借出",
+                              "text": "借出：275/40R19 - F1A6"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "button",
+                        "style": "secondary",
+                        "height": "sm",
+                        "margin": "sm",
+                        "action": {
+                          "type": "message",
+                          "label": "校正數量",
+                          "text": "校正數量：275/40R19 - F1A6"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "margin": "md",
+                "spacing": "sm",
+                "borderColor": "#dddddd",
+                "borderWidth": "1px",
+                "paddingAll": "10px",
+                "cornerRadius": "5px"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "米其林",
+            "weight": "bold",
+            "size": "xl",
+            "margin": "md"
+          },
+          {
+            "type": "separator",
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "品牌：米其林",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "規格：235/35R19",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "花紋：PZ4",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "產地：JP",
+                    "size": "sm",
+                    "color": "#555555"
+                  },
+                  {
+                    "type": "text",
+                    "text": "數量：80",
+                    "size": "sm",
+                    "color": "#1DB446",
+                    "weight": "bold"
+                  }
+                ],
+                "margin": "md",
+                "spacing": "sm",
+                "borderColor": "#dddddd",
+                "borderWidth": "1px",
+                "paddingAll": "10px",
+                "cornerRadius": "5px"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "margin": "md",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "horizontal",
+                    "spacing": "sm",
+                    "contents": [
+                      {
+                        "type": "button",
+                        "style": "primary",
+                        "color": "#1DB446",
+                        "height": "sm",
+                        "action": {
+                          "type": "message",
+                          "label": "出貨",
+                          "text": "出貨：235/35R19 - PZ4"
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "style": "primary",
+                        "color": "#FF9500",
+                        "height": "sm",
+                        "action": {
+                          "type": "message",
+                          "label": "借出",
+                          "text": "借出：235/35R19 - PZ4"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "button",
+                    "style": "secondary",
+                    "height": "sm",
+                    "margin": "sm",
+                    "action": {
+                      "type": "message",
+                      "label": "校正數量",
+                      "text": "校正數量：235/35R19 - PZ4"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

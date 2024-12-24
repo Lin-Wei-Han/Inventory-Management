@@ -74,7 +74,7 @@ form.addEventListener('submit', async (e) => {
         吋別: size,
         花紋: pattern,
         數量: document.getElementById('quantityInput').value.trim(),
-        年份週別: document.getElementById('yearSelect').value,
+        週期年份: document.getElementById('yearSelect').value,
         產地: document.getElementById('originSelect').value,
         備註: document.getElementById('descriptionInput').value.trim(),
     };
