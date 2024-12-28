@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>庫存進貨</title>
+    <title>庫存校正</title>
     <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
     <style>
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+      }
+
+      #message {
+        text-align: center;
+        color: green;
+        margin-top: 10px;
       }
 
       body {
@@ -156,7 +162,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>庫存進貨</h1>
+      <h1>庫存校正</h1>
       <div class="info-grid" id="stockInfo">
         <!-- Loading placeholders -->
         <div class="info-item">
@@ -201,7 +207,7 @@
         <input
           type="number"
           id="quantityInput"
-          placeholder="請輸入出貨數量"
+          placeholder="請輸入欲更新數量（會直接取代目前的庫存數量）"
           min="1"
           step="1"
           disabled
@@ -214,7 +220,7 @@
       <button id="submitBtn" class="submit-btn" disabled>送出</button>
       <div id="message"></div>
     </div>
-    <script src="./shipScript.js"></script>
+    <script src="./fixScript.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         const urlParams = new URLSearchParams(window.location.search);
