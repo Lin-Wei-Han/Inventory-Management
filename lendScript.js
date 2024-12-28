@@ -93,7 +93,7 @@ submitBtn.addEventListener('click', async function () {
 
                 if (result_stock.status === 'success') {
 
-                    message.textContent = '出貨紀錄新增成功！';
+                    message.textContent = '借出紀錄新增成功！';
                     setTimeout(() => (message.textContent = ''), 3000);
                 } else {
                     message.style.color = '#ba5757';
