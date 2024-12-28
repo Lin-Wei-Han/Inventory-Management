@@ -63,7 +63,7 @@ submitBtn.addEventListener('click', async function () {
         數量: document.getElementById('quantityInput').value.trim(),
         週期年份: document.getElementById('year').textContent.trim(),
         產地: document.getElementById('origin').textContent.trim(),
-        備註: `原始數量：${document.getElementById('origin-amount').value.trim()}，說明：${document.getElementById('descriptionInput').value.trim()}`,
+        備註: `原始數量：${document.getElementById('origin-amount').textContent.trim()}，說明：${document.getElementById('descriptionInput').value.trim()}`,
     };
 
     console.log('JSON Data:', jsonData); // 確認 JSON 資料
