@@ -54,15 +54,15 @@ submitBtn.addEventListener('click', async function () {
         mode: 'minus',
         user_id: user_id,
         action: '出貨',
-        品牌: document.getElementById('brand').value,
-        型號: document.getElementById('format').value, //胎面寬/扁平比 吋別 花紋
-        胎面寬: document.getElementById('width').value,
-        扁平比: document.getElementById('ratio').value,
-        吋別: document.getElementById('size').value,
-        花紋: document.getElementById('pattern').value,
+        品牌: document.getElementById('brand').textContent.trim(),
+        型號: document.getElementById('format').textContent.trim(), //胎面寬/扁平比 吋別 花紋
+        胎面寬: document.getElementById('width').textContent.trim(),
+        扁平比: document.getElementById('ratio').textContent.trim(),
+        吋別: document.getElementById('size').textContent.trim(),
+        花紋: document.getElementById('pattern').textContent.trim(),
         數量: document.getElementById('quantityInput').value.trim(),
-        年份週別: document.getElementById('year').value,
-        產地: document.getElementById('origin').value,
+        年份週別: document.getElementById('year').textContent.trim(),
+        產地: document.getElementById('origin').textContent.trim(),
         備註: document.getElementById('descriptionInput').value.trim(),
     };
 
@@ -92,7 +92,6 @@ submitBtn.addEventListener('click', async function () {
                 const result_stock = await response_stock.json();
 
                 if (result_stock.status === 'success') {
-                    form.reset();
 
                     message.textContent = '出貨紀錄新增成功！';
                     setTimeout(() => (message.textContent = ''), 3000);
