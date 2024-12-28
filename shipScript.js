@@ -55,13 +55,13 @@ submitBtn.addEventListener('click', async function () {
         user_id: user_id,
         action: '出貨',
         品牌: document.getElementById('brand').textContent.trim(),
-        型號: document.getElementById('format').textContent.trim(), //胎面寬/扁平比 吋別 花紋
+        規格: document.getElementById('format').textContent.trim(), //胎面寬/扁平比 吋別 花紋
         胎面寬: document.getElementById('width').textContent.trim(),
         扁平比: document.getElementById('ratio').textContent.trim(),
         吋別: document.getElementById('size').textContent.trim(),
         花紋: document.getElementById('pattern').textContent.trim(),
         數量: document.getElementById('quantityInput').value.trim(),
-        年份週別: document.getElementById('year').textContent.trim(),
+        週期年份: document.getElementById('year').textContent.trim(),
         產地: document.getElementById('origin').textContent.trim(),
         備註: document.getElementById('descriptionInput').value.trim(),
     };
