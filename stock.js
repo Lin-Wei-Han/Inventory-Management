@@ -70,7 +70,7 @@ form.addEventListener('submit', async (e) => {
         數量: document.getElementById('quantityInput').value.trim(),
         週期年份: document.getElementById('yearSelect').value,
         產地: document.getElementById('originSelect').value,
-        備註: document.getElementById('descriptionInput').value.trim(),
+        //備註: document.getElementById('descriptionInput').value.trim(),
     };
 
     const message = document.getElementById('message');
