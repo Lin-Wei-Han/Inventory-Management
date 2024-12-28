@@ -23,15 +23,9 @@ function getUserProfile() {
     liff
         .getProfile()
         .then((profile) => {
-            message.textContent = `${profile.userId}`;
+            message.textContent = `Success to Login`;
+            setTimeout(() => (message.textContent = ''), 3000);
             user_id = profile.userId;
-            liff.sendMessages([
-                {
-                    type: 'text',
-                    text: `${profile.displayName} - ${user_id}`,
-                },
-            ]);
-            fetchOptions();
         })
         .catch((err) => {
             message.textContent = `Failed to get user profile: ${err.message}`;
@@ -78,8 +72,6 @@ form.addEventListener('submit', async (e) => {
         產地: document.getElementById('originSelect').value,
         備註: document.getElementById('descriptionInput').value.trim(),
     };
-
-    console.log('JSON Data:', jsonData); // 確認 JSON 資料
 
     const message = document.getElementById('message');
 
@@ -140,3 +132,42 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+function setLoadingState(isLoading) {
+    const selects = document.querySelectorAll('.input-group');
+    const inputs = document.querySelectorAll('input[type="text"], input[type="number"]');
+
+    if (isLoading) {
+        // 為選單添加 loading 效果
+        selects.forEach(group => {
+            const select = group.querySelector('select');
+            select.parentElement.classList.add('loading-select');
+        });
+
+        // 為輸入框添加 loading 效果
+        inputs.forEach(input => {
+            input.parentElement.classList.add('loading-input');
+        });
+
+        // 禁用所有表單元素
+        document.querySelectorAll('select, input, button').forEach(element => {
+            element.disabled = true;
+        });
+    } else {
+        // 移除 loading 效果
+        selects.forEach(group => {
+            const select = group.querySelector('select');
+            select.parentElement.classList.remove('loading-select');
+        });
+
+        inputs.forEach(input => {
+            input.parentElement.classList.remove('loading-input');
+        });
+
+        // 啟用所有表單元素
+        document.querySelectorAll('select, input, button').forEach(element => {
+            if (!element.classList.contains('add-btn')) {
+                element.disabled = false;
+            }
+        });
+    }
+}

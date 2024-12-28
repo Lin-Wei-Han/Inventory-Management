@@ -23,15 +23,9 @@ function getUserProfile() {
     liff
         .getProfile()
         .then((profile) => {
-            message.textContent = `${profile.userId}`;
+            message.textContent = `Success to Login`;
+            setTimeout(() => (message.textContent = ''), 3000);
             user_id = profile.userId;
-            liff.sendMessages([
-                {
-                    type: 'text',
-                    text: `${profile.displayName} - ${user_id}`,
-                },
-            ]);
-            fetchOptions();
         })
         .catch((err) => {
             message.textContent = `Failed to get user profile: ${err.message}`;
@@ -39,14 +33,11 @@ function getUserProfile() {
         });
 }
 
-// 新增庫存
+// 新增出貨
 
-const form = document.getElementById('inventoryForm');
-const submitBtn = document.querySelector('.submit-btn');
+const submitBtn = document.getElementById('submitBtn');
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
+submitBtn.addEventListener('click', async function () {
     if (!user_id) {
         alert('User ID 尚未載入，請稍後再試！');
         return;
@@ -57,25 +48,21 @@ form.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
     submitBtn.style.backgroundColor = '#6c757d';
 
-    const width = document.getElementById('widthSelect').value;
-    const ratio = document.getElementById('ratioSelect').value;
-    const size = document.getElementById('sizeSelect').value;
-    const pattern = document.getElementById('patternSelect').value;
 
     // 手動收集表單資料
     const jsonData = {
         mode: 'minus',
         user_id: user_id,
         action: '出貨',
-        品牌: document.getElementById('brandSelect').value,
-        型號: `${width}/${ratio} ${size} ${pattern}`, //胎面寬/扁平比 吋別 花紋
-        胎面寬: width,
-        扁平比: ratio,
-        吋別: size,
-        花紋: pattern,
+        品牌: document.getElementById('brand').value,
+        型號: document.getElementById('format').value, //胎面寬/扁平比 吋別 花紋
+        胎面寬: document.getElementById('width').value,
+        扁平比: document.getElementById('ratio').value,
+        吋別: document.getElementById('size').value,
+        花紋: document.getElementById('pattern').value,
         數量: document.getElementById('quantityInput').value.trim(),
-        年份週別: document.getElementById('yearSelect').value,
-        產地: document.getElementById('originSelect').value,
+        年份週別: document.getElementById('year').value,
+        產地: document.getElementById('origin').value,
         備註: document.getElementById('descriptionInput').value.trim(),
     };
 
@@ -107,7 +94,7 @@ form.addEventListener('submit', async (e) => {
                 if (result_stock.status === 'success') {
                     form.reset();
 
-                    message.textContent = '庫存新增成功！';
+                    message.textContent = '出貨紀錄新增成功！';
                     setTimeout(() => (message.textContent = ''), 3000);
                 } else {
                     message.style.color = '#ba5757';
