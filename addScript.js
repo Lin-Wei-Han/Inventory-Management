@@ -163,11 +163,9 @@ function setLoadingState(isLoading) {
             input.parentElement.classList.remove('loading-input');
         });
 
-        // 啟用所有表單元素
+        // 啟用所有表單元素（包含 .add-btn）
         document.querySelectorAll('select, input, button').forEach(element => {
-            if (!element.classList.contains('add-btn')) {
-                element.disabled = false;
-            }
+            element.disabled = false;
         });
     }
 }

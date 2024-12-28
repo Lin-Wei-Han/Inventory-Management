@@ -338,6 +338,13 @@
       const newOptionInput = document.getElementById('newOptionInput');
       let currentTargetSelect = null;
 
+      dialog.addEventListener('click', (event) => {
+        // 如果點擊目標就是 <dialog> 本身（包含 backdrop），就關閉
+        if (event.target === dialog) {
+          dialog.close();
+        }
+      });
+
       // 數字輸入驗證
       document.querySelectorAll('input[type="number"]').forEach((input) => {
         input.addEventListener('input', function () {
