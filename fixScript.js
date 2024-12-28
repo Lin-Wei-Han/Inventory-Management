@@ -60,7 +60,7 @@ submitBtn.addEventListener('click', async function () {
         扁平比: document.getElementById('ratio').textContent.trim(),
         吋別: document.getElementById('size').textContent.trim(),
         花紋: document.getElementById('pattern').textContent.trim(),
-        數量: document.getElementById('quantityInput').value.trim(),
+        數量: `${document.getElementById('origin-amount').value.trim()} ${document.getElementById('quantityInput').value.trim()}`,
         週期年份: document.getElementById('year').textContent.trim(),
         產地: document.getElementById('origin').textContent.trim(),
         備註: document.getElementById('descriptionInput').value.trim(),
