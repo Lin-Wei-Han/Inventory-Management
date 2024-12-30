@@ -272,7 +272,7 @@
             type="number"
             id="quantityInput"
             placeholder="數量"
-            min="1"
+            min="0"
             required
           />
         </div>
@@ -348,8 +348,8 @@
       // 數字輸入驗證
       document.querySelectorAll('input[type="number"]').forEach((input) => {
         input.addEventListener('input', function () {
-          if (this.value < 1) {
-            this.value = 1;
+          if (this.value < 0) {
+            this.value = 0;
           }
         });
       });
