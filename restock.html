@@ -204,11 +204,6 @@
       </div>
 
       <div class="form-group">
-        <label>週期年份</label>
-        <input type="text" id="yearInput" placeholder="請選擇年份" />
-      </div>
-
-      <div class="form-group">
         <input
           type="number"
           id="quantityInput"
@@ -265,9 +260,6 @@
 
       function updateStockInfo(data) {
         const stockInfo = document.getElementById('stockInfo');
-
-        yearInput.value = data['週期年份'] || '';
-
         stockInfo.innerHTML = `
                 <div class="info-item">
                     <div class="info-label">品牌</div>

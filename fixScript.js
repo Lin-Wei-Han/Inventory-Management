@@ -61,7 +61,7 @@ submitBtn.addEventListener('click', async function () {
         吋別: document.getElementById('size').textContent.trim(),
         花紋: document.getElementById('pattern').textContent.trim(),
         數量: document.getElementById('quantityInput').value.trim(),
-        週期年份: document.getElementById('year').textContent.trim(),
+        週期年份: document.getElementById('yearInput').value.trim(),
         產地: document.getElementById('origin').textContent.trim(),
         備註: `原始數量：${document.getElementById('origin-amount').textContent.trim()}，說明：${document.getElementById('descriptionInput').value.trim()}`,
     };
