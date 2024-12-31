@@ -83,7 +83,8 @@ submitBtn.addEventListener('click', async function () {
         if (result.status === 'success') {
             try {
                 const response_stock = await fetch(
-                    'https://script.google.com/macros/s/AKfycbxCG8IWdEuEPNT0I-g1AMAil1Vh9vXl9rvgjPevCU2KQbZZInylkVRNK7VhcLBIOQt7/exec',
+                    // 'https://script.google.com/macros/s/AKfycbxCG8IWdEuEPNT0I-g1AMAil1Vh9vXl9rvgjPevCU2KQbZZInylkVRNK7VhcLBIOQt7/exec',
+                    'https://script.google.com/macros/s/AKfycbxEwWFUPx8X85I_bgj260phMDn2YkjmDzdJasiUHujtk1JBkYzfQuIQ9uBbbCLahbAV/exec',
                     {
                         method: 'POST',
                         body: JSON.stringify(jsonData)
